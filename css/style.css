@@ -1,0 +1,896 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	transition-duration: .5s;
+}
+ol, ul {
+	list-style: none;
+}
+a {
+	display: inline-block;
+	cursor: pointer;
+}
+@font-face {
+    font-family: 'GT-Eesti';
+    src: url("../fonts/GT-Eesti-Pro-Text-Light.woff2") format("woff2");
+    src: url("../fonts/GT-Eesti-Pro-Text-Light.woff") format("woff"), url("../fonts/GT-Eesti-Pro-Text-Light.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'GT-Eesti';
+    src: url("../fonts/GT-Eesti-Pro-Text-Regular.woff2") format("woff2");
+    src: url("../fonts/GT-Eesti-Pro-Text-Regular.woff") format("woff"), url("../fonts/GT-Eesti-Pro-Text-Regular.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'GT-Eesti';
+    src: url("../fonts/GT-Eesti-Pro-Text-Medium.woff2") format("woff2");
+    src: url("../fonts/GT-Eesti-Pro-Text-Medium.woff") format("woff"), url("../fonts/GT-Eesti-Pro-Text-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'GT-Eesti';
+    src: url("../fonts/GT-Eesti-Pro-Text-Bold.woff2") format("woff2");
+    src: url("../fonts/GT-Eesti-Pro-Text-Bold.woff") format("woff"), url("../fonts/GT-Eesti-Pro-Text-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+.slick-prev {
+    left: -64px;
+    background-color: #f75656;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.slick-prev:hover {
+    background-color: brown;
+}
+.slick-next {
+    right: -70px;
+    background-color: #f75656;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.slick-next:hover {
+    background-color: brown;
+} 
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 36px !important;
+    line-height: 1 !important;
+    opacity: .75 !important;
+    color: #fff;
+}
+.open-btn {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.close-btn {
+    font-size: 20px;
+    color: #9b9bcad3;
+    cursor: pointer;   
+    margin-bottom: 15px;
+}
+.close-btn .revers {
+    transform-origin: top right;
+    transform: rotate(0deg);
+    color: #312e2e;
+}
+.slider-container {
+    display: none;
+}
+.close-btn.active {
+    display: block;
+}
+.slider-container.active {
+    display: block;
+}
+body {
+    background: #000;
+    
+}
+#home {
+    background: url(../images/body_bg.png) no-repeat center;
+}
+#home.active {
+    transform-origin: top right;
+    transform: rotate(30deg);
+}
+#home.revers {  
+    transform-origin: top right;
+    transform: rotate(0deg);
+}
+header  div.hamburger a.open-btn.active {
+    transform-origin:top right;
+    transform: rotate(90deg);
+}
+header  div.hamburger a.open-btn.revers {
+    transform-origin:top right;
+    transform: rotate(0deg);
+}
+header div.hamburger {
+    transition: transform 0.5s linear;
+}
+#home div.hamburger a.open-btn  {
+    transition: transform 0.5s linear;
+}
+body div.menubar {
+    position: fixed; 
+    top: 320px;
+    right: -180px;
+    transition: .5s ease;
+    display: none;
+}
+body div.menubar.active {
+    top: 206px;
+    right: -17px;
+    transition: 1s ease;
+}
+body div.menubar ul {
+    width: 140px;
+}
+body div.menubar ul li {
+    margin-bottom: 30px;
+}
+body div.menubar ul li a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #9b9bcad3;
+}
+body div.menubar ul li a i {
+    
+}
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+#spotlight { 
+    padding: 4% 0;
+    background-image: url(../images/midil.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    text-align: center;
+    border-bottom: 2px solid #0c0808;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+#spotlight header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 60px;
+}
+#spotlight  header a.logo {
+    width: 10%;
+    padding-left: 10%;
+}
+#spotlight header a img { 
+
+}
+#spotlight  header .menu {
+    width: 90%;
+    margin-left: 72%;
+}
+#spotlight header .menu ul {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#spotlight header .menu ul li {
+    width: 45%;
+}
+#spotlight  header .menu ul li a { 
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.open-btn { 
+	font-size: 20px;
+    color: #fff;
+	margin-right: 6px;
+	cursor: pointer;
+	display: none;
+}
+.close-btn .fa-times{
+	color: #fff;
+}
+.open .fas { 
+}
+.slider-container { 
+	background: #fff;
+    padding: 29px 0px;
+    position: fixed;
+    top: 0px;
+	right: -600px;
+    width: 100%;
+    height: 100vh;
+	display: none;
+}
+.slider-container.active{
+	right: 0;
+}
+.slider-container .slider { 
+	text-align: center;
+}
+.slider-container .slider li { 
+	font-size: 16px;
+    margin-bottom: 20px;
+	transition: all .3 ease-in-out;
+	font-weight: bold;
+}
+.slider-container .slider li:last-child a {
+	
+}
+.slider-container .slider li a { 
+	width: 166px;
+	border-radius: 10%;
+	opacity: 0.75;
+	padding: 4% 0;
+	color: #3a3939;
+}
+.slider-container .slider li a:hover {
+	color: #fff;
+}
+#spotlight .wrapper .container .image-container {   
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 5%;
+}
+#spotlight .wrapper .container .image-container img {
+    display: block;
+    width: 100%;
+    margin-left: 4%;
+}
+#spotlight .wrapper .container h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1%;
+    text-transform: capitalize;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#spotlight .wrapper .container a {
+    margin: 0 auto;
+    align-items: center;
+}
+#spotlight .wrapper .container .submit {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    padding: 2% 5%;
+    margin-top: 4%;
+}
+#main {
+    padding: 4% 0;
+    border-bottom: 2px solid #0c0808;
+    text-align: center;
+}
+#main .wrapper {
+
+}
+#main h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1%;
+    text-transform: capitalize;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#main h1 span {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1%;
+    text-transform: capitalize;
+    color: #f33e3e;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#main .wrapper p.details {
+    margin-top: 2%;
+    font-size: 20px;
+    color: #575757e1;
+    padding: 0 4%;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#main div.container {
+    display: block;
+    padding-top: 5%;
+}
+#main div.container .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    align-items: center;
+}
+#main div.container .item .image-container {
+    width: 35%;
+}
+#main div.container .item .image-container img {
+    box-shadow: 2px 3px 22px 2px #e2e1e1;
+    display: block;
+    width: 100%;
+}
+#main div.container .item .description {
+    text-align: left;
+
+    width: 62%;
+} 
+#main div.container .item .description h3 {
+    font-size: 36px;
+    color: #000;
+    font-weight: bold;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#main div.container .item .description p {
+    font-size: 18px;
+    margin-top: 3%;
+    color: #6d6d6d;
+    line-height: 1.7rem;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#main div.container .item .description a {
+    margin-top: 5%;
+}
+#main div.container .item .description a.button {   
+    color: #000;  
+    font-size: 19px;   
+    font-weight: bold;
+}
+#about {
+    padding: 4% 0;
+    text-align: center;
+    border-bottom: 2px solid #0c0808;
+}
+#about .wrapper {
+}
+#about .wrapper .container {
+
+}
+#about .wrapper .container h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3%;
+    color: rgb(25, 25, 44);
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#about .wrapper .container h2 span {
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+}
+#about .wrapper .container p {
+    font-size: 20px;
+    color: #2c2c2c;
+    margin: 5% 0;
+    line-height: 1.8rem;
+    text-align: center;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#about .wrapper .container a {
+    margin: 0 auto;
+    text-align: center;
+}
+#about .wrapper .container a.submit {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    padding: 2% 5%;
+    margin-top: 1%;
+}
+#testimonial {
+    padding: 4% 0;
+    border-bottom: 2px solid #0c0808;
+}
+#testimonial .wrapper {
+    
+}
+#testimonial .wrapper h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3%;
+    color: #312e2e;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#testimonial .wrapper p.one {
+    color: #363636;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 8%;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#testimonial .wrapper div.single-item {
+    width: 100%;
+}
+#testimonial .wrapper div.single-item .one {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+#testimonial .wrapper div.single-item .one .image-container {
+    width: 25%;
+}
+#testimonial .wrapper div.single-item .one .image-container img {
+    width: 100%;
+    display: block;
+}
+#testimonial .wrapper div.single-item .one .right {
+    margin-left: 3%;
+    width: 70%;
+}
+#testimonial .wrapper div.single-item .one .right h3 {
+    font-size: 30px;
+    margin-bottom: 2%;
+    font-weight: bold;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#testimonial .wrapper div.single-item .one .right p {
+    font-size: 18px;
+    margin-top: 4%;
+    color: #6d6d6d;
+    line-height: 1.8rem;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#contact { 
+    padding: 4% 0;
+}
+#contact .wrapper { 
+    display: flex;
+    padding-top: 6%;
+    justify-content: space-between;
+    padding-bottom: 7%;
+}
+#contact .wrapper .left {
+    display: block;
+    width: 50%;
+}
+#contact .wrapper .left h3 { 
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#contact .wrapper .left p { 
+    font-size: 20px;
+    color: #202020;
+    line-height: 1.7rem;
+    margin-top: 7%;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#contact .wrapper .left h4 { 
+    margin-top: 10%;
+    font-size: 40px;
+    color: #000;
+    font-weight: bold;
+    font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+#contact .wrapper .right { 
+    width: 50%;
+    margin-left: 3%;
+}
+#contact .wrapper .right form {
+    text-align: center;
+}
+#contact .wrapper .right form input[type=text] {
+	width: 95%;
+	padding: 16px 20px 16px 0;
+    border-bottom: 1px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+#contact .wrapper .right form input[type=number] {
+    width: 95%;
+	padding: 16px 20px 16px 0;
+    border-bottom: 1px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+#contact .wrapper .right form input[type=email] {
+	width: 95%;
+	padding: 16px 20px 16px 0;
+    border-bottom: 1px solid #000;
+	margin-top: 4%;
+    font-size: 18px;
+    font-weight: bold;
+}
+#contact .wrapper .right form div.text {
+	margin-top: 4%;
+}
+#contact .wrapper .right form div.text textarea {
+	width: 95%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2% 0;
+    border-bottom: 1px solid #000;
+}
+#contact .wrapper .right form a {
+}
+#contact .wrapper .right form .submit { 
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 4% 13%;
+    margin-top: 8%;
+}
+footer {
+    border-top: 2px solid #000;
+    position: relative;
+}
+footer h5 { 
+    text-align: center;
+    margin: 3% 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+footer div.img-box {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+footer div.img-box img {
+    display: block;
+    width: 100%;
+}
+@media all and (max-width: 1280px) {
+    #spotlight header .menu {
+        margin-left: 66%;
+    }
+    #spotlight .wrapper .container .image-container {
+        width: 68%;
+    }
+    #main h1 {
+        font-size: 46px;
+    }
+    #main h1 span {
+        font-size: 46px;
+    }
+    #main .wrapper p.details {
+        font-size: 18px;
+        padding: 0;
+    }
+    #main div.container .item .image-container img {
+        width: 100%;
+    }
+    #main div.container .item .description {
+        margin: 0% 0 0 4%;
+    }
+    #main div.container .item .description h3 {
+        font-size: 32px;
+        margin-top: 3%;
+    }
+    #main div.container .item .description p {
+        font-size: 17px;
+        margin-top: 2%;
+    }
+    #main div.container .item .description a {
+        margin-top: 1%;
+    }
+    #testimonial .wrapper div.single-item {
+        margin: 0 auto;
+    }
+    .slick-prev {
+    left: -107px;
+    }
+    #contact .wrapper .left h3 {
+        font-size: 30px;
+    }
+    #contact .wrapper .left h4 {
+        font-size: 30px;
+    }
+    #contact .wrapper .left p {
+        font-size: 18px;
+    }
+    #contact .wrapper .right form a {
+        margin-top: 5%;
+    }
+}
+@media all and (max-width: 1080px) {
+    #spotlight {
+        background-size: 270px;
+    }
+    
+    #spotlight .wrapper .container h1 {
+        font-size: 40px;
+    }
+    .slick-prev {
+        left: -96px;
+    }
+    footer div.img-box {
+        width: 94px;
+    }
+    #contact .wrapper .left h4 {
+        font-size: 26px;
+    } 
+}
+@media all and (max-width: 980px) {
+    #spotlight header .menu {
+        margin-left: 60%;
+    }
+    #spotlight {
+        background-size: 281px;
+    }
+    #spotlight .wrapper .container h1 {
+        font-size: 36px;
+    }
+    #main div.container .item {
+        margin-bottom: 13%;
+        flex-direction: column;
+    }
+    #main div.container .item .image-container {
+    width: 50%;
+    }
+    #main div.container .item .description {
+        width: 100%;
+    }
+    .slick-prev {
+        left: -72px;
+    }
+    .slick-next {
+        right: -72px;
+    }
+    #testimonial .wrapper div.single-item .one {
+        flex-direction: column;
+    }
+    #testimonial .wrapper div.single-item .one .image-container {
+        width: 35%;
+        margin-bottom: 5%;
+    }
+    #testimonial .wrapper div.single-item .one .right {
+        margin-left: 0%;
+        width: 100%;
+    }
+    #contact .wrapper {
+        flex-wrap: wrap;
+    }
+    #contact .wrapper .left {
+        width: 100%;
+    }
+    #contact .wrapper .right {
+        width: 100%;
+        margin-top: 8%;
+    }
+    #contact .wrapper .right form input[type=text] {
+        width: 100%;
+    }
+    #contact .wrapper .right form input[type=number] {
+        width: 100%;
+    }
+    #contact .wrapper .right form input[type=email] {
+        width: 100%;
+    }
+    #contact .wrapper .right form div.text textarea {
+        width: 100%;
+    }
+}
+@media all and (max-width: 768px) {
+    body div.menubar {
+        display: block;
+    }
+    #spotlight header a.logo {
+        width: 21%;
+        padding-left: 28px;
+    }
+    #spotlight {
+        background-size: 171px;
+    }
+    #spotlight header a.open-btn {
+        display: inline-block;
+        width: 140px;
+    }
+    #spotlight header a img {
+        display: block;
+        width: 100%;
+    }
+    /* .open-btn {
+        display: block;
+    } */
+    #spotlight header .menu {
+        display: none;
+    }
+    #spotlight .wrapper .container h1 {
+        font-size: 28px;
+    }
+    #main h1 {
+        font-size: 35px;
+    }#main h1 span {
+        font-size: 35px;
+    }
+    #about .wrapper .container h2 {
+        font-size: 40px;
+    }
+    #about .wrapper .container h2 span {
+        font-size: 40px;
+    }
+    #about .wrapper .container p {
+        font-size: 18px;
+    }
+    #testimonial .wrapper h2 {
+        font-size: 40px;
+    }
+    #testimonial .wrapper p.one {
+        font-size: 18px;
+    }
+    .slick-prev {
+        left: -64px;
+        top: 50px;
+    }
+    .slick-next {
+        right: -64px;
+        top: 50px;
+    }
+    footer h5 {
+    font-size: 15px;
+     }
+}
+@media all and (max-width: 640px) {
+    #spotlight {
+        background-size: 126px;
+    }
+    #spotlight .wrapper .container h1 {
+        font-size: 24px;
+    }
+    #spotlight .wrapper .container .submit {
+        font-size: 16px;
+    }
+    #spotlight header a.open-btn {
+        width: 50px;
+    }
+    #main h1 {
+        font-size: 32px;
+    }
+    #main h1 span {
+        font-size: 32px;
+    }
+    #main div.container .item .description h3 {
+        font-size: 27px;
+    }
+    #main div.container .item .description a {
+        margin-top: 6%;
+    }
+    #about .wrapper .container h2 {
+        font-size: 35px;
+    }
+    #about .wrapper .container h2 span {
+        font-size: 35px;
+    }
+    #about .wrapper .container a.submit {
+        font-size: 18px;
+    }
+    .slick-prev {
+        left: -47px;
+        width: 50px;
+        height: 50px;
+    }
+    .slick-next {
+        right: -47px;
+        width: 50px;
+        height: 50px;
+    }
+    #testimonial .wrapper div.single-item .one .right h3 {
+        font-size: 28px;
+    }
+    #contact .wrapper .right form .submit {
+        font-size: 18px;
+    }
+    footer div.img-box {
+        width: 62px;
+    }
+    footer h5 {
+        font-size: 14px;
+    }
+}
+@media all and (max-width: 480px){
+    #spotlight .wrapper .container h1 {
+        font-size: 18px;
+    }
+    #main h1 {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+    #main h1 span {
+        font-size: 21px;
+    }
+    #main .wrapper p {
+        font-size: 16px;
+    }
+    #main div.container {
+        padding-top: 35px;
+    }
+    #main div.container .item .image-container {
+        width: 85%;
+    }
+    #main div.container .item .description h3 {
+        font-size: 24px;
+        margin: 20px 0 15px;
+    }
+    #about .wrapper .container h2 {
+        font-size: 26px;
+    }
+    #about .wrapper .container h2 span {
+        font-size: 26px;
+    }
+    #about .wrapper .container a.submit {
+        font-size: 16px;
+    }
+    #testimonial .wrapper h2 {
+        font-size: 27px;
+    }
+    .slick-prev {
+        left: -48px;
+        width: 45px;
+        height: 45px;
+    }
+    .slick-next {
+        right: -43px;
+        width: 45px;
+        height: 45px;
+    }
+    #testimonial .wrapper div.single-item {
+        width: 92%;
+    }
+    #testimonial .wrapper div.single-item .one .right h3 {
+        font-size: 24px;
+    }
+    #contact .wrapper .left h3 {
+        font-size: 28px;
+    }
+    #contact .wrapper .left h4 {
+        font-size: 21px;
+    }
+    footer h5 {
+        font-size: 14px;
+        width: 65%;
+        margin: 10px auto;
+    }
+}
+@media all and (max-width: 360px){
+    #spotlight {
+        background-size: 84px;
+    }
+    #spotlight header a.logo {
+        width: 111px;
+    }
+    #spotlight header a.open-btn {
+        width: 0;
+    }
+    #spotlight .wrapper .container .submit {
+        font-size: 14px;
+        margin: 20px 0;
+    }
+    .slick-prev {
+        left: -41px;
+    }
+    #contact .wrapper .right form .submit {
+        font-size: 16px;
+    }
+    footer div.img-box {
+        width: 50px;
+    }
+}
+@media all and (max-width: 320px) {
+
+}
